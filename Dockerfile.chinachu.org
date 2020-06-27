@@ -47,6 +47,7 @@ RUN set -x \
         && git clone ${REPOSITORY} ${WORK_DIR} \
         && chown -R ${USER_NAME} ${WORK_DIR} \
         && cd ${WORK_DIR} \
+        && git checkout ${BRANCH} \
         && echo 2 | sudo -u ${USER_NAME} ./chinachu installer \
         && echo 4 | sudo -u ${USER_NAME} ./chinachu installer \
         && echo 5 | sudo -u ${USER_NAME} ./chinachu installer \
