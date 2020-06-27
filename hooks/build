@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -eu
+
+echo "? build"
+source hooks/.config
+
+echo "build_architectures $verified_build_architectures"
+for arch in ${verified_build_architectures[@]}; do
+
+	echo "ARCH $arch"
+
+	ARCH=${arch}
+	BASE_IMAGE_PREFIX="${base_image_prefix_map[${arch}]}"
+  docker build \
+    --build-arg BASE_IMAGE_PREFIX=${BASE_IMAGE_PREFIX} \
+    --build-arg ARCH=${ARCH} \
+    --file ${DOCKERFILE_PATH} \
+    --tag "${IMAGE_NAME}-${ARCH}"  \
+    .
+done
