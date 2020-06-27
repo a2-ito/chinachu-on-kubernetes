@@ -7,7 +7,9 @@ source hooks/.config
 echo "build_architectures $verified_build_architectures"
 for arch in ${verified_build_architectures[@]}; do
 
-	echo "ARCH $arch"
+	echo "##########################################################################################"
+	echo "# ARCH $arch"
+	echo "##########################################################################################"
 
 	ARCH=${arch}
 	BASE_IMAGE_PREFIX="${base_image_prefix_map[${arch}]}"
