@@ -31,7 +31,6 @@ RUN set -x \
 		musl-dev \
 		eudev-dev \
 		libevent-dev \
-		pcsc-lite-dev \
 		libusb-dev \
 		libtool\
 		flex\
