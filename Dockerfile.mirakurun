@@ -29,7 +29,6 @@ RUN set -x \
 		automake \
 		libc-dev \
 		musl-dev \
-		eudev-dev \
 		libevent-dev \
 		libusb-dev \
 		libtool\
