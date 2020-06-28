@@ -74,6 +74,7 @@ RUN set -x \
 #RUN sed -i 's/-lpcsclite/-lpcsckai/' /usr/lib/x86_64-linux-gnu/pkgconfig/libpcsclite.pc
 
 COPY mirakurun/services.sh /usr/local/bin
+COPY mirakurun/rectest.sh /tmp
 
 WORKDIR /usr/local/lib/node_modules/mirakurun
 CMD ["/usr/local/bin/services.sh"]
