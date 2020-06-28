@@ -1,5 +1,6 @@
 ARG BASE_IMAGE_PREFIX
-FROM ${BASE_IMAGE_PREFIX}node:10-alpine
+#FROM ${BASE_IMAGE_PREFIX}node:10-alpine
+FROM ${BASE_IMAGE_PREFIX}node:10
 
 # see hooks/post_checkout
 ARG ARCH
