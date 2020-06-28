@@ -10,8 +10,8 @@ COPY qemu-${ARCH}-static /usr/bin
 ENV DOCKER="YES"
 
 RUN set -x \
-	&& apk upgrade --update \
-	&& apk add \
+	&& apt update -y \
+	&& apt install -y \
 		bash \
 		coreutils \
 		libusb \
@@ -21,7 +21,7 @@ RUN set -x \
 		ca-certificates \
 		util-linux \
 	\
-	&& apk add --virtual .build-deps \
+	&& apt install -y \
 		git \
 		make \
 		gcc \
