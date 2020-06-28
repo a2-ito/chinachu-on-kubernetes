@@ -18,8 +18,6 @@ RUN set -x \
 		curl \
 		ca-certificates \
 		util-linux \
-	\
-	&& apt install -y \
 		git \
 		make \
 		gcc \
@@ -66,7 +64,7 @@ RUN set -x \
 	&& cd / \
 	&& npm cache verify \
 	#&& rm -rf /tmp/* \
-	&& rm -rf /tmp/recpt1 \
+	#&& rm -rf /tmp/recpt1 \
 	&& rm -rf /var/cache/apk/*
 
 	# forward request and error logs to docker log collector
