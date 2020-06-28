@@ -1,4 +1,5 @@
 ARG BASE_IMAGE_PREFIX
+#FROM ${BASE_IMAGE_PREFIX}php:5.6-apache
 FROM ${BASE_IMAGE_PREFIX}node:10-alpine
 
 # see hooks/post_checkout
@@ -58,12 +59,22 @@ RUN set -x \
 	&& make \
 	&& make install \
 	\
+	# ccid
+	&& cd /tmp \
+	&& git clone --recursive https://salsa.debian.org/rousseau/CCID.git \
+	&& cd CCID \
+	&& ./bootstrap \
+	&& ./configure \
+	&& make \
+	&& make install \
+	\
 	# cleaning
 	&& cd / \
 	&& npm cache verify \
 	&& apk del --purge .build-deps \
-	&& rm -rf /tmp/* \
+	#&& rm -rf /tmp/* \
 	&& rm -rf /tmp/recpt1 \
+	&& rm -rf /tmp/ccid-* \
 	&& rm -rf /var/cache/apk/*
 
 	# forward request and error logs to docker log collector

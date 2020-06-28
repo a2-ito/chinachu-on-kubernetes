@@ -1,8 +1,7 @@
 version: '2'
 services:
   mirakurun:
-    build:
-        context: mirakurun
+    image: a2ito/mirakurun:latest-amd64
     container_name: mirakurun
     privileged: true
     ports:
@@ -13,8 +12,6 @@ services:
   chinachu:
     image: a2ito/chinachu:latest-amd64
     container_name: dc-chinachu
-    build:
-      context: chinachu
     ports:
      - "10772:10772"
      - "20772:20772"
