@@ -41,6 +41,12 @@ RUN set -x \
 	# mirakurun
 	&& npm install mirakurun@latest -g --unsafe --production \
 	\
+	# libarib25
+	&& git clone https://github.com/stz2012/libarib25.git /tmp/libarib25 \
+	&& cd /tmp/libarib25/cmake \
+	&& cmake .. \
+	&& make \
+	\
 	# recpt1
 	&& git clone https://github.com/stz2012/recpt1 /tmp/recpt1 \
 	&& cd /tmp/recpt1/recpt1 \
@@ -65,6 +71,8 @@ RUN set -x \
 	# forward request and error logs to docker log collector
 	#&& ln -sf /dev/stdout /usr/local/var/log/mirakurun.stdout-0.log \
 	#&& ln -sf /dev/stderr /usr/local/var/log/mirakurun.stderr-0.log
+
+#RUN sed -i 's/-lpcsclite/-lpcsckai/' /usr/lib/x86_64-linux-gnu/pkgconfig/libpcsclite.pc
 
 COPY mirakurun/services.sh /usr/local/bin
 
