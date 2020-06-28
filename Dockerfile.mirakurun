@@ -33,6 +33,7 @@ RUN set -x \
 		libusb-dev \
 		libtool\
 		flex\
+		cmake \
 	\
 	&& npm install pm2 -g \
 	\
