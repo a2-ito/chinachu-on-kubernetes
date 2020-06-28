@@ -14,7 +14,7 @@ RUN set -x \
 	&& apt install -y \
 		bash \
 		coreutils \
-		pcsc-lite-devel \
+		libpcsclite-dev \
 		curl \
 		ca-certificates \
 		util-linux \
