@@ -58,7 +58,6 @@ RUN set -x \
 	# cleaning
 	&& cd / \
 	&& npm cache verify \
-	&& apk del --purge .build-deps \
 	#&& rm -rf /tmp/* \
 	&& rm -rf /tmp/recpt1 \
 	&& rm -rf /var/cache/apk/*
