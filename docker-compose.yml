@@ -8,7 +8,7 @@ services:
       - "40772:40772"
     volumes:
      - /etc/localtime:/etc/localtime:ro
-     - /mnt/Sharedisk:/sharedisk:rw
+     - /mnt/ShareDisk:/sharedisk:rw
 
   chinachu:
     image: a2ito/chinachu:latest-amd64

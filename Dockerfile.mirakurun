@@ -45,6 +45,7 @@ RUN set -x \
 	&& cd /tmp/libarib25/cmake \
 	&& cmake .. \
 	&& make \
+	&& make install \
 	\
 	# recpt1
 	&& git clone https://github.com/stz2012/recpt1 /tmp/recpt1 \

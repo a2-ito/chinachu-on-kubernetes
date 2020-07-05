@@ -68,14 +68,14 @@ for _item in ${list_gr[@]};
 do
   echo ${_item}
   recpt1 --b25 --strip ${_item} 10 /tmp/test_${_item}.ts
-  #mv /tmp/test_${_item}.ts /mnt/sharerdvol/tmp/
+  mv /tmp/test_${_item}.ts /sharedisk/tmp/
 done
 exit 0
 
 for _item in ${list_bs[@]}; do
   echo ${_item}
   recpt1 --b25 --strip ${_item} 10 /tmp/test_${_item}.ts
-  mv /tmp/test_${_item}.ts /mnt/sharerdvol/tmp/
+  mv /tmp/test_${_item}.ts /sharedisk/tmp/
 done
 
 #for _item in ${list_cs[@]}; do
