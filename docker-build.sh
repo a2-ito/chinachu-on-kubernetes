@@ -33,3 +33,5 @@ for arch in ${verified_build_architectures[@]}; do
     .
 done
 
+sudo /usr/local/bin/docker-compose -f docker-compose.yml down
+sudo /usr/local/bin/docker-compose -f docker-compose.yml up -d

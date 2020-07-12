@@ -1,7 +1,8 @@
 version: '2'
 services:
   mirakurun:
-    image: a2ito/mirakurun:latest-amd64
+    #image: a2ito/mirakurun:latest-amd64
+    image: mirakurun-amd64
     container_name: mirakurun
     privileged: true
     ports:
@@ -9,6 +10,7 @@ services:
     volumes:
      - /etc/localtime:/etc/localtime:ro
      - /mnt/ShareDisk:/sharedisk:rw
+     - ./mirakurun/conf:/usr/local/etc/mirakurun
 
   chinachu:
     image: a2ito/chinachu:latest-amd64
